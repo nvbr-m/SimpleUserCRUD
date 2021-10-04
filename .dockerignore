@@ -1,0 +1,8 @@
+# Created by .ignore support plugin (hsz.mobi)
+templates/
+venv/
+docker-compose.yml
+Dockerfile
+.gitignore
+.idea/
+.git/

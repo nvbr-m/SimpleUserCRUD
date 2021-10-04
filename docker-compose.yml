@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  # this project uses sqlite
+#  db:
+#    image: postgres
+#    volumes:
+#      - ./db:/var/lib/postgresql/data
+#    environment:
+#      - POSTGRES_DB=postgres
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_PASSWORD=postgres
+
+  backend:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8000
+    ports:
+    - "8000:8000"
+    restart: on-failure
+    volumes:
+    - .:/app
+#    depends_on:
+#      - db
+    networks:
+      default:
+        aliases:
+          - backend
